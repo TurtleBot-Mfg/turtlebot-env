@@ -1,0 +1,13 @@
+Source: turtlebot-env
+Section: science
+Priority: extra
+Maintainer: Human x Robot <code@hxr.io>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 4.1.4
+
+Package: turtlebot-env
+Architecture: any
+Depends: ${misc:Depends}, chrony, openssh-server, udev, bash-bashrc.d, python-rosinstall, python-rosinstall-generator, python-wstool, python-vcstool, build-essential
+Description: TurtleBot system envronment
+ Configures the Ubuntu environment for operation as a TurtleBot
+ Disables power suspend on lid-close events
