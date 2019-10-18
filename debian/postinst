@@ -1,8 +1,29 @@
 #!/bin/sh
 set -e
 
+backup_known_conf() {
+  conf=$1
+  md5conf=$2
+  backup=$3
+  if [ -e "$conf" ]; then
+    if echo "$md5conf  $conf" | md5sum -c - 2>1 > /dev/null; then
+      mv $conf $backup
+    fi
+  fi
+}
+
+
 if [ "$1" = "configure" ]; then
+    # Disable suspend on lid-close events
     /usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas
+
+    # Prevent upgrade to next LTS as support for 18.04 does not exist yet.
+    backup_known_conf /etc/update-manager/release-upgrades \
+                      df41b4619e6054b4558a75e316923611 \
+                      /etc/update-manager/release-upgrades.enable
+    ucfr turtlebot-env /etc/update-manager/release-upgrades
+    ucf /usr/share/turtlebot/release-upgrades.disable \
+        /etc/update-manager/release-upgrades
 fi
 
 #DEBHELPER#

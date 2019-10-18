@@ -1,8 +1,15 @@
+turtlebot-env (0.1.2) unstable; urgency=low
+
+  * Disabling LTS upgrades until supported
+
+ -- Human x Robot <code@hxr.io>  Fri, 18 Oct 2019 00:06:39 -0400
+
 turtlebot-env (0.1.1) unstable; urgency=low
 
   * Installing Orbbec Astra udev rules until installation can be upstreamed
 
  -- Human x Robot <code@hxr.io>  Thu, 17 Oct 2019 12:13:32 -0400
+
 turtlebot-env (0.1.0) unstable; urgency=low
 
   * Initial build

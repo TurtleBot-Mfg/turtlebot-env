@@ -1,8 +1,23 @@
 #!/bin/sh
 set -e
+purge_conf() {
+    conf="$1"
+    rm -f "$conf" \
+          "$conf.ucf-dist" \
+          "$conf.ucf-old" \
+          "$conf.ucf-new"
+}
+
 
 if [ "$1" = "purge" ]; then
     /usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas
+
+    purge_conf /etc/update-manager/release-upgrades
+    if [ -e /etc/update-manager/release-upgrades.enable ]; then
+      mv /etc/update-manager/release-upgrades.enable /etc/update-manager/release-upgrades
+    fi
+    ucf --purge /etc/update-manager/release-upgrades
+    ucfr --purge turtlebot-env /etc/update-manager/release-upgrades
 fi
 
 #DEBHELPER#
