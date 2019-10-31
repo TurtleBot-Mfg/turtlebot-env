@@ -1,3 +1,10 @@
+turtlebot-env (0.1.3) unstable; urgency=low
+
+  * installing default systemd roslaunch units
+  * installing default ROS network autoconfiguration environment
+
+ -- Human x Robot <code@hxr.io>  Thu, 31 Oct 2019 02:21:17 -0400
+
 turtlebot-env (0.1.2) unstable; urgency=low
 
   * Disabling LTS upgrades until supported
