@@ -1,3 +1,9 @@
+turtlebot-env (0.1.5) unstable; urgency=low
+
+  * Start indicator by default
+
+ -- Human x Robot <code@hxr.io>  Fri, 08 Nov 2019 18:58:24 -0500
+
 turtlebot-env (0.1.4) unstable; urgency=low
 
   * Adding defaults to environment skel
